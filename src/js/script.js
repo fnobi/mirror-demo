@@ -1,10 +1,12 @@
-import Sample from './lib/Sample';
-import $ from 'jquery';
+const video = document.querySelector('.js-video');
 
-const sample = new Sample({
-    name: 'world'
-});
+window.navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
 
-$('.wrapper').on('click', () => {
-    console.log(`hello, ${sample.name}.`);
+window.navigator.getUserMedia({ video: true }, (localMediaStream) => {
+    video.src = window.URL.createObjectURL(localMediaStream);
+    video.onloadedmetadata = (e) => {
+        // Ready to go. Do some stuff.
+    };
+}, () => {
+    alert('fail.');
 });
