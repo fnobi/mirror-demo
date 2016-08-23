@@ -60,5 +60,5 @@ table {
   left: 0px; }
 
 .mirror {
-  -webkit-transform: translateX(-1);
-          transform: translateX(-1); }
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1); }
