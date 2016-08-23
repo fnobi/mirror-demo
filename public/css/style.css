@@ -58,3 +58,7 @@ table {
   height: 100%;
   top: 0px;
   left: 0px; }
+
+.mirror {
+  -webkit-transform: translateX(-1);
+          transform: translateX(-1); }
